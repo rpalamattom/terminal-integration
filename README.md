@@ -1,4 +1,4 @@
-# terminal-integration
+# Terminal-integration
 Experiments in POS and ATM integration
 
 ## Use Case: ATM Initiated Cash Out
@@ -39,3 +39,23 @@ The business process involves two parties, Merchant and Customer. The merchant i
   - If Payer FSP authorizes the transaction, funds will be sent to Merchant (Payee) FSP. If Payer FSP declines, the transaction will be aborted. 
   - Response will be sent back to POS driver through Mojaloop in OPEN API. It will be converted to ISO(POS) and will send the response to POS.
   - Notification will be sent to Payer and Payee from respective FSP’s.
+  
+  ## Simulator Endpoints
+  
+  Three new end points will be implemented on the simuator as below
+  ATM Ednpoint
+  POS Endpoint
+  OTP Endpoint
+  
+  ###ATM Endpoint
+  ATM endpoint will be implemented on the simulator to receive and process transactions originiating from ATM devices.
+  
+  ###POS Endpoint
+  
+  POS Endpoitn will be implemented on the simulator to receive and process transactions originating from POS & mPOS devices
+  
+  ###OTP Endpoint
+  
+  OTP Endpoitn is implemented on the simulator to process OTP generation requests. Upon receipt of an OTP generation request, the system  will generate and respond with an OTP to the device. 
+Also, upon receipt of an OTP for validation the endpoint will be resposible for the validdation of the OTP based on the generated OTP.
+  
