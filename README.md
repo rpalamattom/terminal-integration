@@ -39,3 +39,24 @@ The business process involves two parties, Merchant and Customer. The merchant i
   - If Payer FSP authorizes the transaction, funds will be sent to Merchant (Payee) FSP. If Payer FSP declines, the transaction will be aborted. 
   - Response will be sent back to POS driver through Mojaloop in OPEN API. It will be converted to ISO(POS) and will send the response to POS.
   - Notification will be sent to Payer and Payee from respective FSP’s.
+  
+  ## Simulator Endpoints
+  
+  As a part of the use case implementation, three new endpoints will  be implemented on the simulator as below:
+  
+  OTP Endpoint
+  ATM Endpoint
+  POS Endpoint
+  
+  ### OTP Endpoint
+  
+  The OTP Endpoint will be responsible for the generation of OTP(One Time Pin) as per the request from the Payer. Once a request for OTP is received by the endpoint, it will create an OTP, store and then respond with the generated value through the same channel.
+    
+  ### ATM Endpoint
+  
+  ATM Endpoint will be responsible for handling transactions originating from ATM devices. The transactions in ISO/NDC formats will be processed by the ATM Endpoint and responded appropriatley.
+  
+  ### POS Endpoint
+  
+  The POS Endpoint will handle the transactions originating from POS and mPOS devices. The mobile number, along with the OTP will be processed by the POS Endpoint 
+  
